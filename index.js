@@ -17,7 +17,7 @@
 
 csst = `
 <style>
-#grp {
+#grp_nvrpl {
     position:fixed;
     bottom:0;
     right:0;
@@ -30,46 +30,69 @@ csst = `
     width: 25px;
 }
 
-#lst {
+#lst_nvrpl {
     list-style: none;
     padding: 10px 0
 }
 
-    li {
+    #lst_nvrpl li {
         margin-bottom: 10px;
     }
 
-    .close {
+    #lst_nvrpl li a {
+        text-decoration: none;
+    }
+
+    #grp_nvrpl .close {
         display: none;
         transition: all ease 2s 0s;
     }
 
-    .open {
+    #grp_nvrpl .open {
         display: inline;
     }
 </style>
 `
 
 htmlt = `
-    <div id="grp">
-        <ol id="lst" class="close" onselectstart="return false">
-            <li>🚫</li>
-            <li>🌐</li>
-            <li>🤬</li>
+    <div id="grp_nvrpl" onselectstart="return false">
+        <ol id="lst_nvrpl" class="close">
+            <li><a href="javascript:block()">🚫</a></li>
+            <li><a href="javascript:friend()">🌐</a></li>
+            <li><a href="javascript:beep()">🤬</a></li>
         </ol>
-        <div id="btn">🔍</div>
+        <div id="btn_nvrpl">🔍</div>
     </div>
 `
 document.querySelector("body").innerHTML += htmlt
 document.querySelector("head").innerHTML += csst
 
 let open = false
-document.getElementById("btn").addEventListener("click", ()=>{
+document.getElementById("btn_nvrpl").addEventListener("click", ()=>{
     if(open){
         open = false
-        document.getElementById("lst").className = "close"
+        document.getElementById("lst_nvrpl").className = "close"
     } else {
         open = true
-        document.getElementById("lst").className = "open"
+        document.getElementById("lst_nvrpl").className = "open"
     }
 })
+
+let count = 0
+function beep(){
+    beeps = ["너 멍청해", "너 못생겼어", "너 바보야", "숙제는 했니?", "컴퓨터 그만해", "똥🟤", "tlsqkf", "너IQ 10보다 적어", "니 겨털 3m", "니 인중 5m", "너 원숭이랑 말싸움해서 짐"]
+    let beep = beeps[count]
+    count += 1
+    if(count > beeps.length - 1){
+        count = 0
+    }
+    alert(beep)
+}
+
+function friend(){
+    alert("온라인 가상 친구 넣을 자리")
+}
+
+function block(){
+    alert("사이트 막기 넣을 자리 (완성)")
+}
