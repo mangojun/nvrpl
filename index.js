@@ -1,19 +1,19 @@
-// blocksite = [
-//     "youtube.com"
-// ]
+blocksite = [
+    "youtube.com"
+]
 
-// setInterval(()=>{
-//     let loc = window.location.href;
+setInterval(()=>{
+    let loc = window.location.href;
 
-//     function check(site){
-//         if(loc.includes(site)){
-//             alert("하지마");
-//             history.back();
-//         }
-//     }
+    function check(site){
+        if(loc.includes(site)){
+            alert("하지마");
+            history.back();
+        }
+    }
 
-//     blocksite.forEach(site => check(site));
-// }, 500)
+    blocksite.forEach(site => check(site));
+}, 500)
 
 csst = `
 <style>
@@ -67,17 +67,6 @@ htmlt = `
 document.querySelector("body").innerHTML += htmlt
 document.querySelector("head").innerHTML += csst
 
-let open = false
-document.getElementById("btn_nvrpl").addEventListener("click", ()=>{
-    if(open){
-        open = false
-        document.getElementById("lst_nvrpl").className = "close"
-    } else {
-        open = true
-        document.getElementById("lst_nvrpl").className = "open"
-    }
-})
-
 let count = 0
 function beep(){
     beeps = ["너 멍청해", "너 못생겼어", "너 바보야", "숙제는 했니?", "컴퓨터 그만해", "똥🟤", "tlsqkf", "너IQ 10보다 적어", "니 겨털 3m", "니 인중 5m", "너 원숭이랑 말싸움해서 짐"]
@@ -96,3 +85,14 @@ function friend(){
 function block(){
     alert("사이트 막기 넣을 자리 (완성)")
 }
+
+let open = false
+document.getElementById("btn_nvrpl").addEventListener("click", ()=>{
+    if(open){
+        open = false
+        document.getElementById("lst_nvrpl").className = "close"
+    } else {
+        open = true
+        document.getElementById("lst_nvrpl").className = "open"
+    }
+})
