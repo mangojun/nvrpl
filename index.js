@@ -57,8 +57,8 @@ csst = `
 htmlt = `
     <div id="grp_nvrpl" onselectstart="return false">
         <ol id="lst_nvrpl" class="close">
-            <li><a href="javascript:block()">🚫</a></li>
-            <li><a href="javascript:friend()">🌐</a></li>
+            <li><a href="javascript:alert('딴짓하는 사이트 막는 기능 찾아오랬더니 딴짓하는 사이트로 딴짓하느라 못만들었다고 하는데')">🚫</a></li>
+            <li><a href="javascript:alert('금지 사이트 추가 기능을 만들라 했는데 지금도 놀고만 있는데')">🌐</a></li>
             <li><a href="javascript:beep()">🤬</a></li>
         </ol>
         <div id="btn_nvrpl">🔍</div>
@@ -76,14 +76,6 @@ function beep(){
         count = 0
     }
     alert(beep)
-}
-
-function friend(){
-    alert("온라인 가상 친구 넣을 자리")
-}
-
-function block(){
-    alert("사이트 막기 넣을 자리 (완성)")
 }
 
 let open = false
